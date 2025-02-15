@@ -1,6 +1,5 @@
 package com.HasnainAkhtar.i221241.adapters
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,36 +9,28 @@ import androidx.recyclerview.widget.RecyclerView
 import com.HasnainAkhtar.i221241.R
 import com.HasnainAkhtar.i221241.models.Contact
 
+class ContactAdapter(
+    private val contacts: List<Contact>,
+    private val onItemClick: (Contact) -> Unit
+) : RecyclerView.Adapter<ContactAdapter.ContactViewHolder>() {
 
-class ContactAdapter(private val contactList: List<Contact>) :
-    RecyclerView.Adapter<ContactAdapter.ContactViewHolder>() {
-
-    class ContactViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val profileImage: ImageView = itemView.findViewById(R.id.ivProfileImage)
-        val contactName: TextView = itemView.findViewById(R.id.tvContactName)
+    class ContactViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val tvName: TextView = view.findViewById(R.id.tvContactName)
+        val ivProfile: ImageView = view.findViewById(R.id.ivProfileImage)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_contact, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_contact, parent, false)
         return ContactViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ContactViewHolder, position: Int) {
-        val contact = contactList[position]
-        holder.profileImage.setImageResource(contact.profileImageResId)
-        holder.contactName.text = contact.name
+        val contact = contacts[position]
+        holder.tvName.text = contact.name
+        holder.ivProfile.setImageResource(contact.profileImageResId)
 
-        if (contact.isBold) {
-            holder.contactName.setTypeface(null, android.graphics.Typeface.BOLD)
-        } else {
-            holder.contactName.setTypeface(null, android.graphics.Typeface.NORMAL)
-        }
-
-
-
-
+        holder.itemView.setOnClickListener { onItemClick(contact) }
     }
 
-    override fun getItemCount(): Int = contactList.size
+    override fun getItemCount() = contacts.size
 }

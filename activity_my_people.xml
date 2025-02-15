@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PeopleActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OliviaD"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_gravity="start"
+                />
+
+            <ImageView
+                android:id="@+id/btnEdit"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/e1"
+                android:layout_gravity="end"
+
+                android:contentDescription="Edit Profile" />
+        </LinearLayout>
+
+        <!-- Search Bar -->
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search for friends"
+
+            android:padding="12dp"
+            android:background="@drawable/bg_search_bar" />
+
+        <!-- Contacts Section -->
+        <TextView
+            android:id="@+id/tvInContacts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="In Contacts"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingTop="16dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvContacts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <!-- Invite New Friends Section -->
+        <TextView
+            android:id="@+id/tvInviteNew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Invite New Friends"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingTop="16dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvInviteList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    </LinearLayout>
+
+    <!-- Bottom Navigation Bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:itemTextColor="@color/brown"
+        app:itemBackground="@color/lavender"
+        android:background="?android:attr/windowBackground"
+        app:menu="@menu/bottom_nav_menu"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -17,14 +17,30 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Header Section -->
-            <TextView
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end">
+                <TextView
                 android:id="@+id/tvCommunityTitle"
+                android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                android:layout_weight="1"  android:text="My Community"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_gravity="start"/>
+                <TextView
+                android:id="@+id/tvMyContacts"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="My Community"
-                android:textSize="22sp"
-                android:textStyle="bold" />
+                android:padding="12dp"
+                android:text="My Contacts"
+                android:textColor="@color/brown"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_gravity="end"/> </LinearLayout>
+
 
             <TextView
                 android:id="@+id/tvCommunityDesc"
@@ -60,6 +76,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        app:itemTextColor="@color/brown"
+        app:itemBackground="@color/lavender"
         android:background="?android:attr/windowBackground"
         app:menu="@menu/bottom_nav_menu"/>
 

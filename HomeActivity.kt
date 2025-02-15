@@ -2,6 +2,7 @@ package com.HasnainAkhtar.i221241
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,6 +20,12 @@ class HomeActivity : AppCompatActivity() {
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         val storyRecyclerView = findViewById<RecyclerView>(R.id.storyRecyclerView)
         val postRecyclerView = findViewById<RecyclerView>(R.id.postRecyclerView)
+
+        val tvMyContacts = findViewById<TextView>(R.id.tvMyContacts)
+
+        tvMyContacts.setOnClickListener {
+            startActivity(Intent(this, PeopleActivity::class.java))
+        }
 
         // Sample data for Stories
         val storyList = listOf(
@@ -45,15 +52,15 @@ class HomeActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.nav_home -> true
                 R.id.nav_search -> {
-                    //startActivity(Intent(this, SearchActivity::class.java))
+                    startActivity(Intent(this, SearchActivity::class.java))
                     true
                 }
                 R.id.nav_add -> {
-                    //startActivity(Intent(this, AddPostActivity::class.java))
+                    startActivity(Intent(this, AddNewPostActivity::class.java))
                     true
                 }
                 R.id.nav_profile -> {
-                    //startActivity(Intent(this, ProfileActivity::class.java))
+                    startActivity(Intent(this, ProfileActivity::class.java))
                     true
                 }
                 R.id.nav_contacts -> {

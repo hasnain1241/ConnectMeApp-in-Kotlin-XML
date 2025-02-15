@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@android:color/white"
+    android:padding="20dp">
+
+    <!-- Contact Name -->
+    <TextView
+        android:id="@+id/tvContactName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Henry Benjamin"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Profile Image -->
+    <ImageView
+        android:id="@+id/ivProfile"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/facebook"
+        android:scaleType="centerCrop"
+        android:background="@drawable/circle_background"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Call Time -->
+    <TextView
+        android:id="@+id/tvCallTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10:32"
+        android:textSize="18sp"
+        android:textColor="@android:color/holo_blue_bright"/>
+
+    <!-- Bottom Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="50dp">
+
+        <ImageButton
+            android:id="@+id/btnMoreOptions"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/button_background"
+            android:src="@drawable/b1"/>
+
+        <ImageButton
+            android:id="@+id/btnVideoCall"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/button_background"
+            android:src="@drawable/vc"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
+
+        <ImageButton
+            android:id="@+id/btnAudioCall"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/button_background"
+            android:src="@drawable/calls"/>
+
+        <ImageButton
+            android:id="@+id/btnMute"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/button_background"
+            android:src="@drawable/mute"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
+
+        <ImageButton
+            android:id="@+id/btnEndCall"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/red_circle"
+            android:src="@drawable/ec"/>
+    </LinearLayout>
+</LinearLayout>

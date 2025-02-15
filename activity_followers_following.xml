@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ContactActivity">
+    tools:context=".FollowersFollowingActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="16dp">
 
@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:contentDescription="Back"
-                android:src="@drawable/back" />
+                android:src="@drawable/b1" />
 
             <TextView
                 android:id="@+id/tvTitle"
@@ -31,27 +31,37 @@
                 android:text="OliviaD"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:layout_centerInParent="true"/>
+                android:layout_centerInParent="true" />
         </RelativeLayout>
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabLayout"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabIndicatorColor="@color/brown"
-            app:tabTextColor="@color/black"
-            app:tabSelectedTextColor="@color/brown">
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tabDMs"
-                android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/tvFollowers"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="DMs"/>
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tabRequests"
-                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:text="410 Followers"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:padding="8dp" />
+
+            <TextView
+                android:id="@+id/tvFollowing"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Requests"/>
-        </com.google.android.material.tabs.TabLayout>
+                android:layout_weight="1"
+                android:text="387 Following"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:padding="8dp" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -70,15 +80,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:hint="Search for DMs"
+                android:hint="Search for users"
                 android:padding="8dp" />
         </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/contactRecyclerView"
+        <FrameLayout
+            android:id="@+id/fragmentContainer"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

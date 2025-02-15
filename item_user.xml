@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:gravity="center_vertical">
+
+    <!-- User Profile Image -->
+    <ImageView
+        android:id="@+id/ivProfile"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/profile"
+        android:scaleType="centerCrop"
+        android:background="@drawable/circle_background" />
+
+    <!-- User Info -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingStart="12dp">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Full Name"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OliviaD"
+            android:textSize="14sp"
+            android:textColor="@android:color/darker_gray" />
+    </LinearLayout>
+
+    <!-- Follow/Unfollow Button -->
+    <Button
+        android:id="@+id/btnFollow"
+
+        android:layout_width="25dp"
+        android:layout_height="30dp"
+        android:background="@drawable/msg"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:text="Follow"
+        android:textColor="@android:color/white" />
+</LinearLayout>
